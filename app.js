@@ -46,3 +46,14 @@ setTimeout(() => {
        Al tener on(), la consola SÍ imprimirá los datos actualizados automáticamente. */
     refMedico1.put({ especialidad: 'Cirugía Cardiovascular' });
 }, 4000);
+
+/* A los 5 segundos, APAGAMOS la escucha y hacemos otra modificación */
+setTimeout(() => {
+    
+    /* Cerramos la conexión en tiempo real del nodo medicos */
+    medicos.off();
+    
+    /* Modificamos a Ana. El cambio se guarda en la BD, pero la consola se queda en silencio */
+    medicos.get('medico_ana').put({ especialidad: 'Neurología' });
+    
+}, 5000);
